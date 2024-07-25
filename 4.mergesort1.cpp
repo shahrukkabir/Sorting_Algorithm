@@ -1,7 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int a[]={0,3,2,4,1,8,5,6,2};
+//T.C: n*log2(n)
+//S.C: O(n)
+
+vector<int>a{0,3,2,4,1,8,5,6,2};
 
 void merge(int l, int mid, int r){
     int p = l; 
@@ -15,8 +18,8 @@ void merge(int l, int mid, int r){
             v[k]=a[q];
             k++,q++;
         }
-        else if(q>r){                  //T.C: n*log2(n)
-            v[k]=a[p];                 //S.C: O(n)
+        else if(q>r){                  
+            v[k]=a[p];                
             k++,p++;
         }
         else if(a[p]<=a[q]){
@@ -34,6 +37,7 @@ void merge(int l, int mid, int r){
         k++;
     }
 }
+
 
 void mergeSort(int l, int r){
 
@@ -53,14 +57,18 @@ void mergeSort(int l, int r){
      }
 }
 
+
 int main(){
+    // for(int i=1;i<=8;i++){
+    //     cout<<a[i]<<" ";
+    // }
+    for(auto &u:a) cout<<u<<" ";
+    cout<<endl;
     mergeSort(1,8);
     cout<<endl;
     cout<<"*******************"<<endl;
 
-    for(int i=1;i<=8;i++){
-        cout<<a[i]<<" ";
-    }
+    for(auto &u:a) cout<<u<<" ";
 
     cout<<endl;
     return 0 ;
