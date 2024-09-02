@@ -47,3 +47,10 @@ int main(){
 
     return 0;
 }
+
+
+//Best Case: Median (Mid element of sorted list)
+//Always partitioning in the middle,selected pivot is median.
+
+//Worst Case : sorted
+//Always partitioning will be done in the beginning of the list.
