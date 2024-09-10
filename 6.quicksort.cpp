@@ -6,7 +6,7 @@ int partition(vector<int>&v, int lb, int ub){
     int start=lb;
     int end=ub;
     while(start<end){
-        while(v[start]<=v[end]){
+        while(v[start]<=pivot){
             start++;
         }
         while(v[end]>pivot){
