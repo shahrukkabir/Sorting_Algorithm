@@ -3,21 +3,21 @@ using namespace std;
 
 int partition(vector<int>&v, int lb, int ub){
     int pivot=v[lb];
-    int start=lb;
-    int end=ub;
-    while(start<end){
-        while(v[start]<=pivot){
-            start++;
+    int l=lb;
+    int r=ub;
+    while(l<r){
+        while(v[l]<=pivot){          //find largest value from left
+            l++;
         }
-        while(v[end]>pivot){
-            end--;
+        while(v[r]>pivot){           //find smallest value from right
+            r--;
         }
-        if(start<end){
-            swap(v[start],v[end]);
+        if(l<r){
+            swap(v[l],v[r]);         // less than pivot  pivot   greater than pivot
         }
     }
-    swap(v[lb],v[end]);
-    return end;
+    swap(v[lb],v[r]);
+    return r;
 }
 
 void quickSort(vector<int>&v, int lb, int ub){
